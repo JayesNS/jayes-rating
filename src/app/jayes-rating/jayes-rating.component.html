@@ -1,3 +1,6 @@
-<p>
-  jayes-rating works!
-</p>
+<div>
+  <ng-container *ngFor="let star of stars">
+    <i class="material-icons">{{star}}</i>
+  </ng-container>
+  <span>{{value}}</span>
+</div>
