@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {containerStart} from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'jayes-rating',
@@ -17,11 +16,10 @@ export class JayesRatingComponent implements OnInit {
     this.value = 0;
     this.maxValue = 10;
 
-    this.stars = new Array(this.maxValue);
+    this.stars = new Array(this.maxValue).fill(StarType.EMPTY_STAR);
   }
 
   ngOnInit() {
-    this.stars.fill(StarType.EMPTY_STAR);
     this.calculateStars();
   }
 
@@ -40,6 +38,16 @@ export class JayesRatingComponent implements OnInit {
 
       --value;
       return starType;
+    });
+  }
+
+  highlightStars(starsAmount: number) {
+    this.stars = this.stars.map((star, index) => {
+      if (index <= starsAmount) {
+        return StarType.FULL_STAR;
+      } else {
+        return StarType.EMPTY_STAR;
+      }
     });
   }
 }

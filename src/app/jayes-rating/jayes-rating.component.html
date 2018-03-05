@@ -1,6 +1,6 @@
-<div>
-  <ng-container *ngFor="let star of stars">
-    <i class="material-icons">{{star}}</i>
+<div (mouseleave)="calculateStars()">
+  <ng-container *ngFor="let star of stars; let index = index">
+    <i class="material-icons" (mouseenter)="highlightStars(index)">{{star}}</i>
   </ng-container>
   <span>{{value}}</span>
 </div>
