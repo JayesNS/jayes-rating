@@ -10,11 +10,14 @@ export class JayesRatingComponent implements OnInit {
 
   @Input() maxValue: number;
 
+  @Input() disabled: boolean;
+
   public stars: any[];
 
   constructor() {
     this.value = 0;
     this.maxValue = 10;
+    this.disabled = false;
 
     this.stars = new Array(this.maxValue).fill(StarType.EMPTY_STAR);
   }
@@ -42,13 +45,15 @@ export class JayesRatingComponent implements OnInit {
   }
 
   highlightStars(starsAmount: number) {
-    this.stars = this.stars.map((star, index) => {
-      if (index <= starsAmount) {
-        return StarType.FULL_STAR;
-      } else {
-        return StarType.EMPTY_STAR;
-      }
-    });
+    if (!this.disabled) {
+      this.stars = this.stars.map((star, index) => {
+        if (index <= starsAmount) {
+          return StarType.FULL_STAR;
+        } else {
+          return StarType.EMPTY_STAR;
+        }
+      });
+    }
   }
 }
 

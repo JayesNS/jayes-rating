@@ -4,7 +4,12 @@ div {
   display: flex;
 }
 
-i {
+span {
   color: darkorange;
   cursor: pointer;
+}
+
+span.disabled {
+  color: darkkhaki;
+  cursor: initial;
 }
