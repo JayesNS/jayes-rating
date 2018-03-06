@@ -49,7 +49,8 @@ export class JayesRatingComponent implements OnInit {
       return 0;
     }
 
-    return this.values.reduce((acc, val) => acc + val) / this.values.length;
+    const average = this.values.reduce((acc, val) => acc + val) / this.values.length;
+    return roundPrecisely(average, 2);
   }
 
   highlightStars(starQuantity: number) {
@@ -66,3 +67,9 @@ export class JayesRatingComponent implements OnInit {
 }
 
 export const StarType = {'EMPTY_STAR': 'star_border', 'HALF_STAR': 'star_half', 'FULL_STAR': 'star'};
+
+export function roundPrecisely(value: number, precision?: number): number {
+  const factor = Math.pow(10, precision || 0);
+  const result = Math.round(value * factor) / factor;
+  return result;
+}
