@@ -7,21 +7,21 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class JayesRatingComponent implements OnInit {
-  @Input() values: number[];
-  @Input() maxValue: number;
+  @Input() values: number[] = [];
+  @Input() maxValue = 10;
   @Input() disabled: boolean;
 
   public stars: any[];
 
   constructor() {
-    this.values = [];
-    this.maxValue = 10;
     this.disabled = false;
-
-    this.stars = new Array(this.maxValue).fill(StarType.EMPTY_STAR);
   }
 
   ngOnInit() {
+    this.stars = new Array(this.maxValue).fill(StarType.EMPTY_STAR);
+
+    this.values = this.normalizeValues(this.values);
+
     this.calculateStars();
   }
 
@@ -69,6 +69,10 @@ export class JayesRatingComponent implements OnInit {
       this.values.push(starQuantity);
       this.disabled = true;
     }
+  }
+
+  normalizeValues(values: number[]) {
+    return values.map(value => value < 0 ? 0 : (value > this.maxValue ? this.maxValue : value));
   }
 }
 
