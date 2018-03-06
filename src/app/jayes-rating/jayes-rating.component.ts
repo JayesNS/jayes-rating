@@ -1,15 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'jayes-rating',
   templateUrl: './jayes-rating.component.html',
-  styleUrls: ['./jayes-rating.component.css']
+  styleUrls: ['./jayes-rating.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class JayesRatingComponent implements OnInit {
   @Input() values: number[];
-
   @Input() maxValue: number;
-
   @Input() disabled: boolean;
 
   public stars: any[];
@@ -38,8 +37,8 @@ export class JayesRatingComponent implements OnInit {
       } else {
         starType = StarType.EMPTY_STAR;
       }
-
       --average;
+
       return starType;
     });
   }
@@ -53,7 +52,7 @@ export class JayesRatingComponent implements OnInit {
     return roundPrecisely(average, 2);
   }
 
-  highlightStars(starQuantity: number) {
+  highlight(starQuantity: number) {
     if (!this.disabled) {
       this.stars = this.stars.map((star, index) => {
         if (index <= starQuantity) {

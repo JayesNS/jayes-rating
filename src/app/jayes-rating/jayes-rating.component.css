@@ -4,12 +4,16 @@ div {
   display: flex;
 }
 
-span {
+button {
+  background: none;
+  border: none;
   color: darkorange;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
-span.disabled {
-  color: darkkhaki;
+.disabled {
+  filter: opacity(0.5);
   cursor: initial;
 }

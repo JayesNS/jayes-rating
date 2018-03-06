@@ -9,5 +9,4 @@ export class JayesRoundPipe implements PipeTransform {
   transform(value: number, precision?: number): number {
     return roundPrecisely(value, precision);
   }
-
 }
