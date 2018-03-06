@@ -72,7 +72,7 @@ export class JayesRatingComponent implements OnInit {
   }
 
   normalizeValues(values: number[]) {
-    return values.map(value => value < 0 ? 0 : (value > this.maxValue ? this.maxValue : value));
+    return values.map(value => value < 0 ? 1 : (value > this.maxValue ? this.maxValue : value));
   }
 }
 
