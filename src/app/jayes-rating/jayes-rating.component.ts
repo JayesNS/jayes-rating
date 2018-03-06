@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./jayes-rating.component.css']
 })
 export class JayesRatingComponent implements OnInit {
-  @Input() value: number;
+  @Input() values: number[];
 
   @Input() maxValue: number;
 
@@ -15,7 +15,7 @@ export class JayesRatingComponent implements OnInit {
   public stars: any[];
 
   constructor() {
-    this.value = 0;
+    this.values = [];
     this.maxValue = 10;
     this.disabled = false;
 
@@ -27,27 +27,35 @@ export class JayesRatingComponent implements OnInit {
   }
 
   calculateStars() {
-    let value = this.value;
+    let average = this.average();
     let starType = StarType.EMPTY_STAR;
 
     this.stars = this.stars.map(star => {
-      if (value >= 0.75) {
+      if (average >= 0.75) {
         starType = StarType.FULL_STAR;
-      } else if (value >= 0.25) {
+      } else if (average >= 0.25) {
         starType = StarType.HALF_STAR;
       } else {
         starType = StarType.EMPTY_STAR;
       }
 
-      --value;
+      --average;
       return starType;
     });
   }
 
-  highlightStars(starsAmount: number) {
+  private average() {
+    if (this.values.length === 0) {
+      return 0;
+    }
+
+    return this.values.reduce((acc, val) => acc + val) / this.values.length;
+  }
+
+  highlightStars(starQuantity: number) {
     if (!this.disabled) {
       this.stars = this.stars.map((star, index) => {
-        if (index <= starsAmount) {
+        if (index <= starQuantity) {
           return StarType.FULL_STAR;
         } else {
           return StarType.EMPTY_STAR;
