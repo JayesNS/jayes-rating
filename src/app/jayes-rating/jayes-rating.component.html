@@ -1,7 +1,7 @@
 <div (mouseleave)="calculateStars()">
   <span [class.disabled]="disabled">
     <ng-container *ngFor="let star of stars; let starIndex = index">
-      <i class="material-icons" (mouseenter)="highlightStars(starIndex)">{{star}}</i>
+      <i class="material-icons" (mouseenter)="highlightStars(starIndex)" (click)="rate(starIndex+1)">{{star}}</i>
     </ng-container>
   </span>
   <span>{{average() | jayesRound:2}}</span>

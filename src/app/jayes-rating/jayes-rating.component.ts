@@ -64,6 +64,13 @@ export class JayesRatingComponent implements OnInit {
       });
     }
   }
+
+  rate(starQuantity: number) {
+    if (!this.disabled) {
+      this.values.push(starQuantity);
+      this.disabled = true;
+    }
+  }
 }
 
 export const StarType = {'EMPTY_STAR': 'star_border', 'HALF_STAR': 'star_half', 'FULL_STAR': 'star'};
