@@ -7,8 +7,8 @@ div {
 button {
   background: none;
   border: none;
-  color: darkorange;
   cursor: pointer;
+  color: inherit;
   margin: 0;
   padding: 0;
 }
