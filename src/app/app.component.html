@@ -1,6 +1,9 @@
-<jayes-rating></jayes-rating>
-<jayes-rating [values]="[2.24999999999999]"></jayes-rating>
-<jayes-rating [values]="[4.6]"></jayes-rating>
-<jayes-rating [maxValue]="5" [values]="[15]" (rateSubmit)="saveRate()"></jayes-rating>
-<jayes-rating [values]="[-1]"></jayes-rating>
-<jayes-rating [values]="[1.1]" [disabled]="'true'"></jayes-rating>
+<ng-container *ngFor="let rating of mockRatings; last as last">
+  <code>
+    <![CDATA[
+    <jayes-rating [values]="{{rating.values}}" [maxValue]="{{rating.maxValue}}" [disabled]="{{rating.disabled}}" (rateSubmit)="{{rating.rateSubmit ? 'saveRate()' : ''}}"></jayes-rating>
+    ]]>
+  </code>
+  <jayes-rating [values]="rating.values" [maxValue]="rating.maxValue" [disabled]="rating.disabled" (rateSubmit)="rating.rateSubmit()"></jayes-rating>
+  <hr *ngIf="!last">
+</ng-container>
