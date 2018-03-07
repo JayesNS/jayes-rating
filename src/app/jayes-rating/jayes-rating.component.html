@@ -1,8 +1,8 @@
-<div (mouseleave)="calculateStars()">
+<div (mouseleave)="setStarTypes()">
   <div [class.disabled]="disabled">
     <button *ngFor="let star of stars; let starIndex = index"
             (mouseover)="highlight(starIndex)"
-            (click)="addRate(starIndex+1)">
+            (click)="rate(starIndex+1)">
       <i class="material-icons">{{star}}</i>
     </button>
   </div>

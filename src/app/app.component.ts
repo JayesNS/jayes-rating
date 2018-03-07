@@ -6,12 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-
   public mockRatings = [
     {desc: 'No values', values: [], maxValue: 10, disabled: false, rateSubmit: null},
     {desc: 'Rounding', values: [2.24999999999999], maxValue: 10, disabled: false, rateSubmit: null},
-    {desc: 'Mulitple values', values: [4.6, 5.6], maxValue: 10, disabled: false, rateSubmit: null},
+    {desc: 'Multiple values', values: [4.6, 5.6], maxValue: 10, disabled: false, rateSubmit: null},
     {desc: 'Out of range (too high)', values: [15], maxValue: 5, disabled: false, rateSubmit: this.saveRate},
     {desc: 'Out of range (too low)', values: [-1], maxValue: 10, disabled: false, rateSubmit: null},
     {desc: 'Disabled', values: [1.1], maxValue: 10, disabled: true, rateSubmit: null},

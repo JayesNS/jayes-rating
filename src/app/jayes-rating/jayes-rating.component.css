@@ -15,5 +15,4 @@ button {
 
 .disabled {
   filter: opacity(0.5);
-  cursor: initial;
 }
