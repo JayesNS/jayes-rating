@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'jayes-rating',
@@ -10,6 +10,7 @@ export class JayesRatingComponent implements OnInit {
   @Input() values: number[] = [];
   @Input() maxValue = 10;
   @Input() disabled: boolean;
+  @Output() rateSubmit: EventEmitter<boolean> = new EventEmitter();
 
   public stars: any[];
 
@@ -64,10 +65,11 @@ export class JayesRatingComponent implements OnInit {
     }
   }
 
-  rate(starQuantity: number) {
+  addRate(starQuantity: number) {
     if (!this.disabled) {
       this.values.push(starQuantity);
       this.disabled = true;
+      this.rateSubmit.emit(true);
     }
   }
 

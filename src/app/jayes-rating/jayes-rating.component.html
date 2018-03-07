@@ -2,7 +2,7 @@
   <div [class.disabled]="disabled">
     <button *ngFor="let star of stars; let starIndex = index"
             (mouseover)="highlight(starIndex)"
-            (click)="rate(starIndex+1)">
+            (click)="addRate(starIndex+1)">
       <i class="material-icons">{{star}}</i>
     </button>
   </div>

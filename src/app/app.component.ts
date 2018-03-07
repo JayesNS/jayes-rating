@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  saveRate() {
+    console.log('Here you can save rateSubmit');
+  }
 }
