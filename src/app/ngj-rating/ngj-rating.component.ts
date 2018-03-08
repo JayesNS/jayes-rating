@@ -1,12 +1,12 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'jayes-rating',
-  templateUrl: './jayes-rating.component.html',
-  styleUrls: ['./jayes-rating.component.css'],
+  selector: 'ngj-rating',
+  templateUrl: './ngj-rating.component.html',
+  styleUrls: ['./ngj-rating.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class JayesRatingComponent implements OnInit {
+export class NgjRatingComponent implements OnInit {
   @Input() values: number[] = [];
   @Input() maxValue = 10;
   @Input() disabled = false;

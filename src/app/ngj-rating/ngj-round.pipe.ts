@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {roundPrecisely} from './jayes-rating.component';
+import {roundPrecisely} from './ngj-rating.component';
 
 @Pipe({
-  name: 'jayesRound'
+  name: 'ngjRound'
 })
-export class JayesRoundPipe implements PipeTransform {
+export class NgjRoundPipe implements PipeTransform {
 
   transform(value: number, precision?: number): number {
     return roundPrecisely(value, precision);

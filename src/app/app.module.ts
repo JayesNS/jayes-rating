@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import {JayesRatingModule} from './jayes-rating/jayes-rating.module';
+import {NgjRatingModule} from './ngj-rating/ngj-rating.module';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import {JayesRatingModule} from './jayes-rating/jayes-rating.module';
   ],
   imports: [
     BrowserModule,
-    JayesRatingModule
+    NgjRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

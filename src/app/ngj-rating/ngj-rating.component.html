@@ -1,0 +1,10 @@
+<div (mouseleave)="setStarTypes()">
+  <div [class.disabled]="disabled">
+    <div *ngFor="let star of stars; let starIndex = index"
+         (mouseenter)="highlight(starIndex)"
+         (click)="rate(starIndex+1)">
+      <i class="material-icons">{{star}}</i>
+    </div>
+  </div>
+  <div>{{average | ngjRound:2}}</div>
+</div>
