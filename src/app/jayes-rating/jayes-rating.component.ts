@@ -14,16 +14,28 @@ export class JayesRatingComponent implements OnInit {
 
   public stars: any[];
 
+  @Output() averageChange: EventEmitter<number> = new EventEmitter();
+  @Input() average: number;
+
+  constructor() {
+
+  }
+
   ngOnInit() {
     this.stars = new Array(this.maxValue).fill(StarType.EMPTY_STAR);
 
     this.values = this.limitValues(this.values);
+    this.average = this.calculateAverage() || 0;
+
+    setTimeout(() => {
+      this.averageChange.emit(this.average);
+    }, 0);
 
     this.setStarTypes();
   }
 
   public setStarTypes() {
-    let average = this.average();
+    let average = this.average;
     let starType = StarType.EMPTY_STAR;
 
     this.stars = this.stars.map(() => {
@@ -40,13 +52,13 @@ export class JayesRatingComponent implements OnInit {
     });
   }
 
-  public average() {
-    if (this.values.length === 0) {
+  public calculateAverage() {
+    if (this.values.length === 0 || !this.values) {
       return 0;
     }
 
-    const average = this.values.reduce((acc, val) => acc + val) / this.values.length;
-
+    const sum = this.values.reduce((acc, val) => acc + val);
+    const average = sum / this.values.length;
     return roundPrecisely(average, 2);
   }
 
@@ -66,6 +78,10 @@ export class JayesRatingComponent implements OnInit {
     if (!this.disabled) {
       this.values.push(starQuantity);
       this.disabled = true;
+      this.average = this.calculateAverage();
+      this.setStarTypes();
+
+      this.averageChange.emit(this.average);
       this.rateSubmit.emit(true);
     }
   }

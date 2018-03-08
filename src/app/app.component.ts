@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  average: number;
+
   public mockRatings = [
     {desc: 'No values', values: [], maxValue: 10, disabled: false, rateSubmit: null},
     {desc: 'Rounding', values: [2.24999999999999], maxValue: 10, disabled: false, rateSubmit: null},
