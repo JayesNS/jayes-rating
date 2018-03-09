@@ -3,12 +3,20 @@
 
 div {
   display: inline-flex;
-  all: inherit;
+  align-items: center;
+  color: inherit;
 }
 
-div > div {
-  display: inline-flex;
+.ngj-rating-box {
+  margin: 4px;
+}
+
+.ngj-rating-star {
   cursor: pointer;
+}
+
+.ngj-rating-rate {
+  margin: 0 4px
 }
 
 .disabled {

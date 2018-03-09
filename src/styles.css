@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.ngj-rating-star {
+  color: green;
+}
+
+.ngj-rating-rate {
+  color: coral;
+}
+
+.custom-class .ngj-rating-star {
+  color: red;
+}
+
+.custom-class .ngj-rating-container {
+  border: 1px dashed chartreuse;
+}
+
+.custom-class .ngj-rating-rate {
+  color: darkorchid;
+}

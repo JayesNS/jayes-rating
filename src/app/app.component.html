@@ -1,13 +1,13 @@
 <ng-container *ngFor="let rating of mockRatings; last as last">
   <code>
     <![CDATA[
-    <ngj-rating [ngClass]="{'custom-style': {{!!rating.class}} }" [values]="{{rating.values}}" [maxValue]="{{rating.maxValue}}" [disabled]="{{rating.disabled}}" (rateSubmit)="{{rating.rateSubmit ? 'saveRate()' : ''}}"></ngj-rating>
+    <ngj-rating [values]="{{rating.values}}" [maxValue]="{{rating.maxValue}}" [disabled]="{{rating.disabled}}" (rateSubmit)="{{rating.rateSubmit ? 'saveRate()' : ''}}"></ngj-rating>
     ]]>
   </code>
-  <ngj-rating [ngClass]="{'custom-style': !!rating.class }" [values]="rating.values" [maxValue]="rating.maxValue" [disabled]="rating.disabled"></ngj-rating>
+  <ngj-rating [values]="rating.values" [maxValue]="rating.maxValue" [disabled]="rating.disabled"></ngj-rating>
   <hr *ngIf="!last">
 </ng-container>
 <hr>
 
-<ngj-rating [values]="[5,4,4]" [(average)]="average" class="custom-color"></ngj-rating>
+<ngj-rating [values]="[5,4,4]" [(average)]="average" class="custom-class"></ngj-rating>
 <div>Binded value: {{average}}</div>
