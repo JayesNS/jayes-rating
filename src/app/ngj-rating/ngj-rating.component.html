@@ -3,8 +3,9 @@
     <div *ngFor="let star of stars; let starIndex = index"
          (mouseenter)="highlight(starIndex)"
          (click)="rate(starIndex+1)">
-      <i class="material-icons">{{star}}</i>
+      <i [ngClass]="[star, 'animate-spin']"></i>
     </div>
   </div>
   <div>{{average | ngjRound:2}}</div>
 </div>
+

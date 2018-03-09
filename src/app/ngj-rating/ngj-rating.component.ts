@@ -94,7 +94,7 @@ export class NgjRatingComponent implements OnInit {
   }
 }
 
-export const StarType = {'EMPTY_STAR': 'star_border', 'HALF_STAR': 'star_half', 'FULL_STAR': 'star'};
+export const StarType = {'EMPTY_STAR': 'fa-star-empty', 'HALF_STAR': 'fa-star-half', 'FULL_STAR': 'fa-star'};
 
 export function roundPrecisely(value: number, precision?: number): number {
   const factor = Math.pow(10, precision || 0);

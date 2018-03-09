@@ -1,16 +1,14 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("icon-font/css/font-awesome.css");
+@import url("icon-font/css/font-awesome-ie7.css");
 
 div {
   display: inline-flex;
+  all: inherit;
 }
 
-div {
-  background: none;
-  border: none;
+div > div {
+  display: inline-flex;
   cursor: pointer;
-  color: inherit;
-  margin: 0;
-  padding: 0;
 }
 
 .disabled {
