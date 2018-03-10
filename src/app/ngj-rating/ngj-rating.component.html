@@ -6,6 +6,12 @@
       <i [ngClass]="[star]"></i>
     </div>
   </div>
-  <div class="ngj-rating-rate">{{average | ngjRound:2}}</div>
+  <div class="ngj-rating-rate" *ngIf="showAverage || showMaxValue">
+    {{average | ngjRound:2}}
+    <ng-container *ngIf="showMaxValue">
+      <span>/</span>
+      {{maxValue}}
+    </ng-container>
+  </div>
 </div>
 

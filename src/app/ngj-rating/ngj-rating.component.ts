@@ -10,6 +10,8 @@ export class NgjRatingComponent implements OnInit {
   @Input() values: number[] = [];
   @Input() maxValue = 10;
   @Input() disabled = false;
+  @Input() showAverage = true;
+  @Input() showMaxValue = false;
   @Output() rateSubmit: EventEmitter<boolean> = new EventEmitter();
 
   public stars: any[];
