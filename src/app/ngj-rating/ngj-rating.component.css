@@ -13,6 +13,7 @@ div {
 
 .ngj-rating-star {
   cursor: pointer;
+  width: 1em;
 }
 
 .ngj-rating-rate {
