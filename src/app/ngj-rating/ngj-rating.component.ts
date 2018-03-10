@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {NgjRatingOptions} from './ngj-rating-options.service';
 
 @Component({
   selector: 'ngj-rating',
@@ -7,20 +8,27 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from 
   encapsulation: ViewEncapsulation.None
 })
 export class NgjRatingComponent implements OnInit {
-  @Input() values: number[] = [];
-  @Input() maxValue = 10;
-  @Input() disabled = false;
-  @Input() showAverage = true;
-  @Input() showMaxValue = false;
-  @Output() rateSubmit: EventEmitter<boolean> = new EventEmitter();
+  @Input() values: number[];
+  @Input() disabled: boolean;
+  @Input() maxValue: number;
+  @Input() showAverage: boolean;
+  @Input() showMaxValue: boolean;
+  @Output() rateSubmit: EventEmitter<boolean>;
 
   public stars: any[];
 
-  @Output() averageChange: EventEmitter<number> = new EventEmitter();
+  @Output() averageChange: EventEmitter<number>;
   @Input() average: number;
 
-  constructor() {
+  constructor(options: NgjRatingOptions) {
+    this.values = [];
+    this.disabled = options.disabled;
+    this.maxValue = options.maxValue;
+    this.showMaxValue = options.showMaxValue;
+    this.showAverage = options.showAverage;
+    this.rateSubmit = new EventEmitter();
 
+    this.averageChange = new EventEmitter();
   }
 
   ngOnInit() {
