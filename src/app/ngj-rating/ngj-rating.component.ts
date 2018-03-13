@@ -13,6 +13,7 @@ export class NgjRatingComponent implements OnInit {
   @Input() maxValue: number;
   @Input() showAverage: boolean;
   @Input() showMaxValue: boolean;
+  @Input() disableAfterRateSubmit: boolean;
   @Output() rateSubmit: EventEmitter<boolean>;
 
   public stars: any[];
@@ -26,6 +27,7 @@ export class NgjRatingComponent implements OnInit {
     this.maxValue = options.maxValue;
     this.showMaxValue = options.showMaxValue;
     this.showAverage = options.showAverage;
+    this.disableAfterRateSubmit = options.disableAfterRateSubmit;
     this.rateSubmit = new EventEmitter();
 
     this.averageChange = new EventEmitter();
@@ -87,9 +89,12 @@ export class NgjRatingComponent implements OnInit {
   public rate(starQuantity: number) {
     if (!this.disabled) {
       this.values.push(starQuantity);
-      this.disabled = true;
       this.average = this.calculateAverage();
       this.setStarTypes();
+
+      if (this.disableAfterRateSubmit === true) {
+        this.disabled = true;
+      }
 
       this.averageChange.emit(this.average);
       this.rateSubmit.emit(true);

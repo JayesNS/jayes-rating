@@ -6,6 +6,7 @@ div {
   align-items: center;
   justify-content: center;
   color: inherit;
+  font-size: 18px;
 }
 
 .ngj-rating-box {
