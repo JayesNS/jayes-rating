@@ -10,6 +10,6 @@ import {NgjRatingOptions} from './ngj-rating-options.service';
   ],
   declarations: [NgjRatingComponent, NgjRoundPipe],
   exports: [NgjRatingComponent],
-  providers: [NgjRatingOptions]
+  providers: [NgjRatingOptions],
 })
 export class NgjRatingModule { }

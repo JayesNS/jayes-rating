@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {NgjRatingOptions} from './ngj-rating/ngj-rating-options.service';
 
 @Component({
@@ -8,13 +8,15 @@ import {NgjRatingOptions} from './ngj-rating/ngj-rating-options.service';
 })
 export class AppComponent {
   average: number;
+  values = [4, 3, 5];
 
   constructor(ngjRatingOptions: NgjRatingOptions) {
     ngjRatingOptions.maxValue = 6;
     ngjRatingOptions.showMaxValue = true;
   }
 
-  saveRate() {
-    console.log('Here you can save rateSubmit');
+  saveRate(event) {
+    console.log('Here you can save rateSubmit', event);
+    console.log(this.values);
   }
 }
