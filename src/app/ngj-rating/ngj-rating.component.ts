@@ -119,6 +119,7 @@ export class NgjRatingComponent implements OnInit {
 export const StarType = {'EMPTY_STAR': 'fa-star-empty', 'HALF_STAR': 'fa-star-half', 'FULL_STAR': 'fa-star'};
 
 export function roundPrecisely(value: number, precision?: number): number {
+  precision = precision < 0 ? 0 : precision;
   const factor = Math.pow(10, precision || 0);
 
   return Math.round(value * factor) / factor;
