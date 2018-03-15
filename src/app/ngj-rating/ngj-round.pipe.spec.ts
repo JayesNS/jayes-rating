@@ -1,8 +1,9 @@
-import { RoundPipe } from './round.pipe';
+import { NgjRoundPipe } from './ngj-round.pipe';
 
-describe('RoundPipe', () => {
+describe('NgjRoundPipe', () => {
+  const pipe = new NgjRoundPipe();
+
   it('create an instance', () => {
-    const pipe = new RoundPipe();
     expect(pipe).toBeTruthy();
   });
 });

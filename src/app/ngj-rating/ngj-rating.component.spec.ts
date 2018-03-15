@@ -1,25 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JayesRatingComponent } from './jayes-rating.component';
+import { NgjRatingComponent } from './ngj-rating.component';
+import {NgjRoundPipe} from './ngj-round.pipe';
+import {NgjRatingOptions} from './ngj-rating-options.service';
 
-describe('JayesRatingComponent', () => {
-  let component: JayesRatingComponent;
-  let fixture: ComponentFixture<JayesRatingComponent>;
+describe('NgjRatingComponent', () => {
+  let component: NgjRatingComponent;
+  let fixture: ComponentFixture<NgjRatingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JayesRatingComponent ]
+      declarations: [ NgjRatingComponent, NgjRoundPipe, NgjRatingOptions ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JayesRatingComponent);
+    fixture = TestBed.createComponent(NgjRatingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { NgjRatingOptionsService } from './ngj-rating-options.service';
+import { NgjRatingOptions } from './ngj-rating-options.service';
 
-describe('NgjRatingOptionsService', () => {
+describe('NgjRatingOptions', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NgjRatingOptionsService]
+      providers: [NgjRatingOptions]
     });
   });
 
-  it('should be created', inject([NgjRatingOptionsService], (service: NgjRatingOptionsService) => {
+  it('should be created', inject([NgjRatingOptions], (service: NgjRatingOptions) => {
     expect(service).toBeTruthy();
   }));
 });
