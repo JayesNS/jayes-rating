@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('jayes-rating App', () => {
+describe('ngj-rating App', () => {
   let page: AppPage;
 
   beforeEach(() => {
