@@ -9,14 +9,9 @@ import {NgjRatingOptions} from './ngj-rating/ngj-rating-options.service';
 export class AppComponent {
   average: number;
   values = [4, 3, 5];
+  rated = false;
 
-  constructor(ngjRatingOptions: NgjRatingOptions) {
-    ngjRatingOptions.maxValue = 6;
-    ngjRatingOptions.showMaxValue = true;
-  }
-
-  saveRate(event) {
-    console.log('Here you can save rateSubmit', event);
-    console.log(this.values);
+  constructor(private options: NgjRatingOptions) {
+    options.maxValue = 10;
   }
 }

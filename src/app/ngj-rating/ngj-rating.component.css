@@ -25,3 +25,7 @@ div {
 .disabled {
   filter: opacity(0.5);
 }
+
+.disabled .ngj-rating-star {
+  cursor: initial;
+}
