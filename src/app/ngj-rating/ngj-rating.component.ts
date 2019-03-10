@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
-import {NgjRatingOptions} from './ngj-rating-options.service';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { NgjRatingOptions } from './ngj-rating-options.service';
 
 @Component({
   selector: 'ngj-rating',
@@ -112,11 +112,15 @@ export class NgjRatingComponent implements OnInit {
     const MinValue = 1;
     const MaxValue = this.maxValue;
 
-    return values.map(value => value < 0 ? MinValue : (value > MaxValue ? MaxValue : value));
+    return values.map(value => (value < 0 ? MinValue : value > MaxValue ? MaxValue : value));
   }
 }
 
-export const StarType = {'EMPTY_STAR': 'fa-star-empty', 'HALF_STAR': 'fa-star-half', 'FULL_STAR': 'fa-star'};
+export const StarType = {
+  EMPTY_STAR: 'fa-star-empty',
+  HALF_STAR: 'fa-star-half',
+  FULL_STAR: 'fa-star'
+};
 
 export function roundPrecisely(value: number, precision?: number): number {
   precision = precision < 0 ? 0 : precision;

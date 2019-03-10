@@ -1,12 +1,12 @@
 ## NgjRating
-This module allows you to add customizable rating box in your Angular 5 project. You can configure basic styles (color, size, etc) and default values (eg. visibility of average, max rate value) using service.
+This module allows you to add customizable rating box in your Angular 7 project. You can configure basic styles (color, size, etc) and default values (eg. visibility of average, max rate value) using service.
 
 ## Tech/framework used
 - TypeScript
 - HTML5, CSS3
 
 **Built with**
-- [Angular5](https://angular.io)
+- [Angular7](https://angular.io)
 
 ## Features
 - easy communication with component,

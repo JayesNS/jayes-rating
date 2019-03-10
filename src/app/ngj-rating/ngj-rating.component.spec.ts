@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NgjRatingComponent } from './ngj-rating.component';
-import {NgjRoundPipe} from './ngj-round.pipe';
-import {NgjRatingOptions} from './ngj-rating-options.service';
+import { NgjRoundPipe } from './ngj-round.pipe';
+import { NgjRatingOptions } from './ngj-rating-options.service';
 
 describe('NgjRatingComponent', () => {
   let component: NgjRatingComponent;
@@ -10,9 +10,8 @@ describe('NgjRatingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgjRatingComponent, NgjRoundPipe, NgjRatingOptions ]
-    })
-    .compileComponents();
+      declarations: [NgjRatingComponent, NgjRoundPipe, NgjRatingOptions]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,5 +1,5 @@
-@import url("icon-font/css/font-awesome.css");
-@import url("icon-font/css/font-awesome-ie7.css");
+@import url('icon-font/css/font-awesome.css');
+@import url('icon-font/css/font-awesome-ie7.css');
 
 div {
   display: inline-flex;
@@ -19,7 +19,7 @@ div {
 }
 
 .ngj-rating-rate {
-  margin: 0 8px
+  margin: 0 8px;
 }
 
 .disabled {

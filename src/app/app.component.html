@@ -1,73 +1,68 @@
-<pre>
-<![CDATA[
-// Global styles
-.ngj-rating-box { ... }
-.ngj-rating-container { ... }
-.ngj-rating-star { color: burlywood; }
-.ngj-rating-rate { color: darkslategray; }
-
-// Custom class in styles.css
-.custom-class .ngj-rating-box { border: 1px dashed yellowgreen; }
-.custom-class .ngj-rating-container { background: salmon; }
-.custom-class .ngj-rating-star { color: black }
-.custom-class .ngj-rating-rate { color: green; }]]>
-</pre>
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating></ngj-rating>]]>
-</pre>
-<ngj-rating></ngj-rating>
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating [values]="[3,4,1,2,2]" [maxValue]="5"></ngj-rating>]]>
-</pre>
-<ngj-rating [values]="[3,4,1,2,2]" [maxValue]="5"></ngj-rating>
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating [values]="values" [disabled]="true"></ngj-rating>]]>
-</pre>
-<ngj-rating [values]="values" [disabled]="true"></ngj-rating>
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating [values]="values" (rateSubmit)="rated = true"></ngj-rating> {{'\{\{rated\}\}'}}]]>
-</pre>
-<ngj-rating [values]="values" (rateSubmit)="rated = true"></ngj-rating>
-{{rated}}
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating [values]="values" [showMaxValue]="true"></ngj-rating>]]>
-</pre>
-<ngj-rating [values]="values" [showMaxValue]="true"></ngj-rating>
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating [values]="values" [showAverage]="false"></ngj-rating>]]>
-</pre>
-<ngj-rating [values]="values" [showAverage]="false"></ngj-rating>
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating [values]="values" [disableAfterRateSubmit]="'false'"></ngj-rating>]]>
-</pre>
-<ngj-rating [values]="values" [disableAfterRateSubmit]="'false'"></ngj-rating>
-
-<hr>
-
-<pre>
-<![CDATA[<ngj-rating [values]="values" class="custom-class"></ngj-rating>]]>
-</pre>
-<ngj-rating [values]="values" class="custom-class"></ngj-rating>
-
-<hr>
+<div>
+  <pre>
+    <![CDATA[// Global styles
+    .ngj-rating-box { ... }
+    .ngj-rating-container { ... }
+    .ngj-rating-star {
+      color: goldenrod;
+      font-size: 32px;
+    }
+    .ngj-rating-rate { color: darkslategray; }
+    
+    // Custom class in styles.css
+    .custom-class .ngj-rating-box { border: 1px dashed yellowgreen; }
+    .custom-class .ngj-rating-container { background: salmon; }
+    .custom-class .ngj-rating-star { color: black }
+    .custom-class .ngj-rating-rate { color: green; }]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating></ngj-rating>
+  <pre>
+    <![CDATA[<ngj-rating></ngj-rating>]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating [values]="[3, 4, 1, 2, 2]" [maxValue]="5"></ngj-rating>
+  <pre>
+    <![CDATA[<ngj-rating [values]="[3,4,1,2,2]" [maxValue]="5"></ngj-rating>]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating [values]="values" [disabled]="true"></ngj-rating>
+  <pre>
+    <![CDATA[<ngj-rating [values]="values" [disabled]="true"></ngj-rating>]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating [values]="values" (rateSubmit)="rated = true"></ngj-rating>
+  {{ rated }}
+  <pre>
+    <![CDATA[<ngj-rating [values]="values" (rateSubmit)="rated = true"></ngj-rating>
+    {{'\{\{rated\}\}'}}]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating [values]="values" [showMaxValue]="true"></ngj-rating>
+  <pre>
+    <![CDATA[<ngj-rating [values]="values" [showMaxValue]="true"></ngj-rating>]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating [values]="values" [showAverage]="false"></ngj-rating>
+  <pre>
+    <![CDATA[<ngj-rating [values]="values" [showAverage]="false"></ngj-rating>]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating [values]="values" [disableAfterRateSubmit]="'false'"></ngj-rating>
+  <pre>
+    <![CDATA[<ngj-rating [values]="values" [disableAfterRateSubmit]="'false'"></ngj-rating>]]>
+  </pre>
+</div>
+<div>
+  <ngj-rating [values]="values" class="custom-class"></ngj-rating>
+  <pre>
+    <![CDATA[<ngj-rating [values]="values" class="custom-class"></ngj-rating>]]>
+  </pre>
+</div>

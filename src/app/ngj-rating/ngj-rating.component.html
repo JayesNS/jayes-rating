@@ -1,17 +1,19 @@
 <div class="ngj-rating-box" (mouseleave)="setStarTypes()">
   <div class="ngj-rating-container" [class.disabled]="disabled">
-    <div class="ngj-rating-star" *ngFor="let star of stars; let starIndex = index"
-         (mouseenter)="highlight(starIndex)"
-         (click)="rate(starIndex+1)">
+    <div
+      class="ngj-rating-star"
+      *ngFor="let star of stars; let starIndex = index"
+      (mouseenter)="highlight(starIndex)"
+      (click)="rate(starIndex + 1)"
+    >
       <i [ngClass]="[star]"></i>
     </div>
   </div>
   <div class="ngj-rating-rate" *ngIf="showAverage || showMaxValue">
-    {{average | ngjRound:2}}
+    {{ average | ngjRound: 2 }}
     <ng-container *ngIf="showMaxValue">
       <span>/</span>
-      {{maxValue}}
+      {{ maxValue }}
     </ng-container>
   </div>
 </div>
-

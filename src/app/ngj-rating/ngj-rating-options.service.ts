@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class NgjRatingOptions {
@@ -8,6 +8,5 @@ export class NgjRatingOptions {
   showMaxValue = false;
   disableAfterRateSubmit = true;
 
-  constructor() { }
-
+  constructor() {}
 }

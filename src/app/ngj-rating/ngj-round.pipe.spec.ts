@@ -22,7 +22,6 @@ describe('NgjRoundPipe', () => {
   it('should round to the nearest whole number', () => {
     const value = pipe.transform(0.49);
     expect(value).toBe(0);
-
   });
 
   it('should round correctly to more decimal points', () => {

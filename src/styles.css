@@ -1,6 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
 .ngj-rating-star {
-  color: burlywood;
+  color: goldenrod;
+  font-size: 32px;
 }
 
 .ngj-rating-rate {
@@ -17,7 +18,7 @@
 }
 
 .custom-class .ngj-rating-star {
-  color: black
+  color: black;
 }
 
 .custom-class .ngj-rating-rate {

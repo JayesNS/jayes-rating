@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {NgjRatingOptions} from './ngj-rating/ngj-rating-options.service';
+import { Component } from '@angular/core';
+import { NgjRatingOptions } from './ngj-rating/ngj-rating-options.service';
 
 @Component({
   selector: 'app-root',
